@@ -14,11 +14,11 @@ const NavigationBar = () => {
         </h2>
       </Box>
       <Box className="ml-auto flex gap-5 items-center">
-        <Link className='font-bold hover:text-purple-900' to='/'>Home</Link>
-        <HashLink className='font-bold hover:text-purple-900' to='/home#about'>About Us</HashLink>
-        <HashLink className='font-bold hover:text-purple-900' to='/#services'>Services</HashLink>
-        <Link className='font-bold hover:text-purple-900'>Our Specialists</Link>
-        <Link className='font-bold hover:text-purple-900'>Contact Us</Link>
+        <Link className='font-semibold hover:text-purple-900' to='/'>Home</Link>
+        <HashLink className='font-semibold hover:text-purple-900' to='/#about'>About Us</HashLink>
+        <HashLink smooth className='font-semibold hover:text-purple-900' to='/#services'>Services</HashLink>
+        <Link className='font-semibold hover:text-purple-900'>Our Specialists</Link>
+        <Link className='font-semibold hover:text-purple-900'>Contact Us</Link>
         <Link to='/appointment'>
           <button className="py-2 px-4 font-semibold rounded-lg shadow-md text-white bg-purple-500 hover:bg-purple-700">Your Appointment</button>
         </Link>
