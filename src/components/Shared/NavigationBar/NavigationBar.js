@@ -17,7 +17,7 @@ const NavigationBar = () => {
         <Link className='font-semibold hover:text-purple-900' to='/'>Home</Link>
         <HashLink className='font-semibold hover:text-purple-900' to='/#about'>About Us</HashLink>
         <HashLink smooth className='font-semibold hover:text-purple-900' to='/#services'>Services</HashLink>
-        <Link className='font-semibold hover:text-purple-900'>Our Specialists</Link>
+        <HashLink smooth to='/#doctors' className='font-semibold hover:text-purple-900'>Our Specialists</HashLink>
         <Link className='font-semibold hover:text-purple-900'>Contact Us</Link>
         <Link to='/appointment'>
           <button className="py-2 px-4 font-semibold rounded-lg shadow-md text-white bg-purple-500 hover:bg-purple-700">Your Appointment</button>
