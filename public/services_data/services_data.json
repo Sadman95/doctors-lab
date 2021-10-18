@@ -1,0 +1,32 @@
+[
+    {
+        "icon_url": "https://i.ibb.co/ZTGqsWt/stethoscope.png",
+        "service_title": "Outdoor Checkup Fecility",
+        "service_description": "We provide outdoor checkup fecility to our patients.For those who are unable come in touch with us, this could be very helpful for them.We are always here to help you in need of any health issues."
+    },
+    {
+        "icon_url": "https://i.ibb.co/sqwZ6fQ/operating-room.png",
+        "service_title": "Operation Theater Service",
+        "service_description": "We provide fully air conditioned & clean operattion theater service along with specialist nursing fecility to cover up the whole operation helping our doctor.We have enriched operation or lab materials."
+    },
+    {
+        "icon_url": "https://i.ibb.co/Dz0Vf3L/siren.png",
+        "service_title": "Emergency Service",
+        "service_description": "We provide emergency services such as free ambulance fecility incase of amergency.We are very aware of our patients condition & very concerned of patients safety and any health issues"
+    },
+    {
+        "icon_url": "https://i.ibb.co/0VsrYDV/blood-test.png",
+        "service_title": "Blood Test",
+        "service_description": "We provide blood test fecility also.We have special nursing unit to collect samples of blood.For any circumstances, we are here to test your blood and you can collect your report within one hour"
+    },
+    {
+        "icon_url": "https://i.ibb.co/r5Ggvdg/pharmacy.png",
+        "service_title": "Pharmacy Support 24/7",
+        "service_description": "We provode 24/7 pharmacy support to fecilitate you with medicine.We are providing home delivery of medicines or pharmaceuticals within two hours in your door step.we try to provide 100% authentic medicine for you."
+    },
+    {
+        "icon_url": "https://i.ibb.co/QrsT9rD/rescuer.png",
+        "service_title": "24/7 special; Service",
+        "service_description": "We are giving all day special service in case of any emergency.We have specialised doctor to provide thius service going directly to your home.Doctors are waiting to get in touch with you."
+    }
+]

@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "img_url": "https://i.ibb.co/fvMpMbP/nabil.jpg",
+        "name": "Dr. Nabil Ahmed",
+        "field": "Cardiologist & Surgeon",
+        "phone": "+01-888-777-111",
+        "email": "nabil@gmail.com",
+        "chamber_time": "4pm - 7pm"
+    },
+    {
+        "id": 2,
+        "img_url": "https://i.ibb.co/kHcK1Gd/anita.jpg",
+        "name": "Dr. Anita Rahman",
+        "field": "Gynecologist & Surgeon",
+        "phone": "+01-222-111-222",
+        "email": "anita@yahoo.com",
+        "chamber_time": "10am - 12.30pm"
+    },
+    {
+        "id": 3,
+        "img_url": "https://i.ibb.co/jb27qKF/hasib.jpg",
+        "name": "Dr. Hasibul Alam",
+        "field": "Dentist",
+        "phone": "+01-333-666-222",
+        "email": "hasib@gmail.com",
+        "chamber_time": "8pm - 10pm"
+    },
+    {
+        "id": 4,
+        "img_url": "https://i.ibb.co/pJBbJBC/ambrin.jpg",
+        "name": "Dr. Ambrin Sultana",
+        "field": "Neurologist & Surgeon",
+        "phone": "+01-555-111-222",
+        "email": "ambrin@yahoo.com",
+        "chamber_time": "7pm - 9pm"
+    },
+    {
+        "id": 5,
+        "img_url": "https://i.ibb.co/9Wy5TjS/bidhan.jpg",
+        "name": "Dr. Bidhan Kumar Roy",
+        "field": "Dermetologist",
+        "phone": "+01-999-111-222",
+        "email": "bidhan@gmail.com",
+        "chamber_time": "3pm - 5pm"
+    },
+    {
+        "id": 6,
+        "img_url": "https://i.ibb.co/B2qphnq/muntahina.jpg",
+        "name": "Dr. Muntahina Haque",
+        "field": "Arthopedics & Surgeon",
+        "phone": "+01-444-111-888",
+        "email": "afsana@gmail.com",
+        "chamber_time": "5pm - 7pm"
+    }
+]

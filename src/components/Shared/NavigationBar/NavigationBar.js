@@ -16,7 +16,7 @@ const NavigationBar = () => {
       <Box className="ml-auto flex gap-5 items-center">
         <Link className='font-bold hover:text-purple-900' to='/'>Home</Link>
         <HashLink className='font-bold hover:text-purple-900' to='/home#about'>About Us</HashLink>
-        <HashLink className='font-bold hover:text-purple-900' to='/home#services'>Services</HashLink>
+        <HashLink className='font-bold hover:text-purple-900' to='/#services'>Services</HashLink>
         <Link className='font-bold hover:text-purple-900'>Our Specialists</Link>
         <Link className='font-bold hover:text-purple-900'>Contact Us</Link>
         <Link to='/appointment'>
