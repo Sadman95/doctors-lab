@@ -6,7 +6,8 @@ import Services from "../Services/Services";
 import Doctors from "../Doctors/Doctors";
 import { Button, Grid } from "@mui/material";
 import { Box } from "@mui/system";
-import DoctorsAll from "../DoctorsAll/DoctorsAll";
+import Subscribe from "../Subsribe/Suscribe";
+
 
 const Home = () => {
   const [doctors, setDoctors] = useState([]);
@@ -49,6 +50,7 @@ const Home = () => {
       <Button onClick={handleMore} variant='contained'>More</Button>
       </Box>
       </Box>
+      <Subscribe></Subscribe>
     </>
   );
 };
