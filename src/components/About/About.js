@@ -4,7 +4,7 @@ import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
 
 const About = () => {
     return (
-        <Box className='mt-16 pt-16'>
+        <Box id='about' className='mt-16 pt-16'>
             <h1 className='text-gray-600 text-center text-4xl font-semibold'>About Us</h1>
             <div className='flex flex-wrap-reverse justify-evenly items-center mt-10'>
                 <div>
