@@ -14,7 +14,7 @@ const Banner = () => {
             <Link to='/login'>
                 <button className='py-2 px-4 font-semibold rounded-lg shadow-md text-white bg-pink-700 hover:bg-pink-500 mr-2'>Log In</button>
             </Link>
-            <Link to='/appointment'>
+            <Link to='/alldoctors'>
                 <button className='py-2 px-4 font-semibold rounded-lg shadow-md text-white bg-green-700 hover:bg-green-500'>Appoint a doctor</button>
             </Link>     
             </div>         

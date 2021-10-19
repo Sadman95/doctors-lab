@@ -1,8 +1,9 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
+import DoctorDetail from './components/DoctorDetail/DoctorDetail';
 import DoctorsAll from './components/DoctorsAll/DoctorsAll';
 import Home from './components/Home/Home';
-import Footer from './components/Shared/Footer/Footer';
+import Login from './components/Login/Login';
 import NavigationBar from './components/Shared/NavigationBar/NavigationBar';
 
 function App() {
@@ -16,8 +17,13 @@ function App() {
           <Route path='/alldoctors'>
             <DoctorsAll></DoctorsAll>
           </Route>
+          <Route path='/doctordetail/:doctorId'>
+            <DoctorDetail></DoctorDetail>
+          </Route>
+          <Route path='/login'>
+            <Login></Login>
+          </Route>
         </Switch>
-        <Footer></Footer>
       </Router>
   );
 }

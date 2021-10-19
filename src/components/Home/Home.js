@@ -7,6 +7,7 @@ import Doctors from "../Doctors/Doctors";
 import { Button, Grid } from "@mui/material";
 import { Box } from "@mui/system";
 import Subscribe from "../Subsribe/Suscribe";
+import Footer from "../Footer/Footer";
 
 
 const Home = () => {
@@ -51,6 +52,7 @@ const Home = () => {
       </Box>
       </Box>
       <Subscribe></Subscribe>
+      <Footer></Footer>
     </>
   );
 };

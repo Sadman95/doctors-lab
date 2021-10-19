@@ -9,12 +9,18 @@ import {
 } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
+import { useHistory } from "react-router";
 
 const Doctors = ({ doctor }) => {
-  const { img_url, name, field } = doctor;
+  const { id, img_url, name, field } = doctor;
+
+  const history = useHistory();
+  const goToDetails = (doctorId) =>{
+      history.push(`/doctordetail/${doctorId}`)
+  }
 
   return (
-    <Box className='flex justify-center sm:gap-8'>
+    <Box className="flex justify-center sm:gap-8">
       <Card sx={{ maxWidth: 345 }}>
         <CardActionArea>
           <CardMedia
@@ -29,17 +35,18 @@ const Doctors = ({ doctor }) => {
             </Typography>
           </CardContent>
         </CardActionArea>
-        <CardActions className='flex justify-between'>
+        <CardActions className="flex justify-between">
           <Typography size="small" color="primary">
             {field}
           </Typography>
           <Chip
-        label="See Details"
-        component="a"
-        color='primary'
-        variant="outlined"
-        clickable
-      />
+            onClick={()=> goToDetails(id)}
+            label="See Details"
+            component="a"
+            color="primary"
+            variant="outlined"
+            clickable
+          />
         </CardActions>
       </Card>
     </Box>
