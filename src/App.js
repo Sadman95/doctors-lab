@@ -6,7 +6,6 @@ import Home from './components/Home/Home';
 import Login from './components/Login/Login';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import NavigationBar from './components/Shared/NavigationBar/NavigationBar';
-import SignUp from './components/SignUp/SignUp';
 import AuthProvider from './context/AuthProvider/AuthProvider';
 
 function App() {
@@ -27,9 +26,7 @@ function App() {
           <Route path='/login'>
             <Login></Login>
           </Route>
-          <Route path='/signup'>
-            <SignUp></SignUp>
-          </Route>
+          
         </Switch>
       </Router>
       </AuthProvider>

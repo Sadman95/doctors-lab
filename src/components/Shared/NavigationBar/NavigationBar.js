@@ -81,11 +81,7 @@ const NavigationBar = () => {
                   Log Out
                 </button>
               </Link>}
-          <Link to="/signup">
-            <button className="py-2 px-4 font-semibold rounded-lg shadow-md text-white bg-yellow-500 hover:bg-yellow-700">
-              Sign Up
-            </button>
-          </Link>
+          
         </ul>
         <div className="md: block lg:hidden">
           <label htmlFor="check">
@@ -144,11 +140,7 @@ const NavigationBar = () => {
                   Log Out
                 </button>
               </Link>}
-              <Link to="/signup">
-                <button className="py-2 px-4 font-semibold rounded-lg shadow-md text-white bg-yellow-500 hover:bg-yellow-700">
-                  Sign Up
-                </button>
-              </Link>
+              
             </ul>
             </div>
         </div>
