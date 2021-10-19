@@ -4,23 +4,26 @@ import DoctorDetail from './components/DoctorDetail/DoctorDetail';
 import DoctorsAll from './components/DoctorsAll/DoctorsAll';
 import Home from './components/Home/Home';
 import Login from './components/Login/Login';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import NavigationBar from './components/Shared/NavigationBar/NavigationBar';
 import SignUp from './components/SignUp/SignUp';
+import AuthProvider from './context/AuthProvider/AuthProvider';
 
 function App() {
   return (
-      <Router>
+      <AuthProvider>
+        <Router>
         <NavigationBar></NavigationBar>
         <Switch>
           <Route exact path='/'>
             <Home></Home>
           </Route>
-          <Route path='/alldoctors'>
+          <PrivateRoute path='/alldoctors'>
             <DoctorsAll></DoctorsAll>
-          </Route>
-          <Route path='/doctordetail/:doctorId'>
+          </PrivateRoute>
+          <PrivateRoute path='/doctordetail/:doctorId'>
             <DoctorDetail></DoctorDetail>
-          </Route>
+          </PrivateRoute>
           <Route path='/login'>
             <Login></Login>
           </Route>
@@ -29,6 +32,7 @@ function App() {
           </Route>
         </Switch>
       </Router>
+      </AuthProvider>
   );
 }
 

@@ -1,12 +1,26 @@
 import { Box } from "@mui/system";
+import Chip from "@mui/material/Chip";
+import Avatar from "@mui/material/Avatar";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import logo from "../../../../src/logo.png";
 import MenuIcon from "@mui/icons-material/Menu";
 import "./NavigationBar.css";
+import useAuth from "../../../hooks/useAuth";
 
 const NavigationBar = () => {
+  const {user, handleLogOut, setUser} = useAuth();
+
+  // const history = useHistory();
+
+  const signOut = () =>{
+    handleLogOut()
+    .then(() =>{
+      setUser({})
+    })
+  }
+
   return (
     <Box className="bg-blue-50 p-4 flex items-center">
       <Box className="flex items-center">
@@ -48,16 +62,25 @@ const NavigationBar = () => {
           >
             Subscribe
           </HashLink>
-          <Link to="/appointment">
-            <button className="py-2 px-4 font-semibold rounded-lg shadow-md text-white bg-purple-500 hover:bg-purple-700">
-              user
-            </button>
-          </Link>
-          <Link to="/login">
-            <button className="py-2 px-4 font-semibold rounded-lg shadow-md text-white bg-green-500 hover:bg-green-700">
-              Log In
-            </button>
-          </Link>
+          <>
+            {
+              user.email && <Chip
+              avatar={<Avatar alt="userPhoto" src={user.photoURL} />}
+              label={user.displayName}
+              variant="outlined"
+            />
+            }
+          </>
+          {!user.email ? <Link to="/login">
+                <button className="py-2 px-4 font-semibold rounded-lg shadow-md text-white bg-green-500 hover:bg-green-700">
+                  Log In
+                </button>
+              </Link>:
+              <Link to='/login'>
+                <button onClick={signOut} className="py-2 px-4 font-semibold rounded-lg shadow-md text-white bg-red-500 hover:bg-red-700">
+                  Log Out
+                </button>
+              </Link>}
           <Link to="/signup">
             <button className="py-2 px-4 font-semibold rounded-lg shadow-md text-white bg-yellow-500 hover:bg-yellow-700">
               Sign Up
@@ -102,16 +125,25 @@ const NavigationBar = () => {
               >
                 Subscribe
               </HashLink>
-              <Link to="/appointment">
-                <button className="py-2 px-4 font-semibold rounded-lg shadow-md text-white bg-purple-500 hover:bg-purple-700">
-                  user
-                </button>
-              </Link>
-              <Link to="/login">
+              <>
+            {
+              user.email && <Chip
+              avatar={<Avatar alt="Natacha" src={user.photoURL} />}
+              label={user.displayName}
+              variant="outlined"
+            />
+            }
+          </>
+              {!user.email ? <Link to="/login">
                 <button className="py-2 px-4 font-semibold rounded-lg shadow-md text-white bg-green-500 hover:bg-green-700">
                   Log In
                 </button>
-              </Link>
+              </Link>:
+              <Link>
+                <button onClick={signOut} className="py-2 px-4 font-semibold rounded-lg shadow-md text-white bg-red-500 hover:bg-red-700">
+                  Log Out
+                </button>
+              </Link>}
               <Link to="/signup">
                 <button className="py-2 px-4 font-semibold rounded-lg shadow-md text-white bg-yellow-500 hover:bg-yellow-700">
                   Sign Up
