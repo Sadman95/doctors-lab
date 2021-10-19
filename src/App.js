@@ -4,6 +4,7 @@ import DoctorDetail from './components/DoctorDetail/DoctorDetail';
 import DoctorsAll from './components/DoctorsAll/DoctorsAll';
 import Home from './components/Home/Home';
 import Login from './components/Login/Login';
+import NotFound from './components/NotFound/NotFound';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import NavigationBar from './components/Shared/NavigationBar/NavigationBar';
 import AuthProvider from './context/AuthProvider/AuthProvider';
@@ -26,7 +27,9 @@ function App() {
           <Route path='/login'>
             <Login></Login>
           </Route>
-          
+          <Route path='*'>
+            <NotFound></NotFound>
+          </Route>
         </Switch>
       </Router>
       </AuthProvider>
