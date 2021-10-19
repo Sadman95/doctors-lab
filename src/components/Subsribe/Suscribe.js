@@ -1,14 +1,15 @@
 import { TextField } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
+import './Subscribe.css'
 
 const Subscribe = () => {
   return (
     <div id="subscribe" className="bg-gray-100 py-6 flex flex-wrap justify-evenly items-center my-24">
       <div>
-        <h1 className='text-gray-800 text-2xl font-medium'><span className='text-5xl text-yellow-500 font-semibold'>Subscribe</span> for Newsletter!!!</h1>
+        <h1 className='text-gray-800 text-2xl font-medium sm: mb-2'><span className='text-5xl text-yellow-500 font-semibold'>Subscribe</span> for Newsletter!!!</h1>
       </div>
-      <div>
+      <div  className='field-btn'>
         <Box
           sx={{
             width: 500,

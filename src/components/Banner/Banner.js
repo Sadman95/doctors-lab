@@ -5,7 +5,7 @@ import './Banner.css'
 
 const Banner = () => {
     return (
-        <Box className='banner mt-4 relative'>
+        <Box className='banner relative'>
             <div className='mix-blend-multiply bg-blue-100 absolute left-0 top-0 right-0 bottom-0'></div>
             <div className='absolute left-4 top-1/2 translate-y-1/2'>
             <h1 className='text-4xl mb-4 font-bold'>Need to Appoint A <br /><span className='text-red-500 text-5xl'>Doctor ?</span></h1>

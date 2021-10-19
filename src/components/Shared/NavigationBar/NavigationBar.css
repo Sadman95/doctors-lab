@@ -1,0 +1,26 @@
+body{
+    position: relative;
+}
+
+.toggle-menu{
+    display: none;
+}
+#check:checked~.toggle-menu{
+    display: block;
+    z-index: 1000;
+    left: 50%;
+    top: 70px;
+    transform: translateX(-50%);
+    background-color: #EFF6FF;
+    width: 100%;
+    padding: 32px 0;
+    animation: drawer 2s alternate forwards;
+}
+@keyframes drawer {
+    0%{
+        top: 45px;
+    }
+    100%{
+        top: 70px;
+    }
+}
