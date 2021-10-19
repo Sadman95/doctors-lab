@@ -13,7 +13,7 @@ const Login = () => {
                 {
                     <button className='mb-4 text-white bg-green-500 hover:bg-green-700 px-4 py-1 rounded'>Log In</button>
                 }
-                <p>Don't have an account? <Link className='text-blue-600 underline'>Sign Up</Link></p>
+                <p>Don't have an account? <Link to='/signup' className='text-blue-600 underline'>Sign Up</Link></p>
                 <div className='text-gray-500'>-----------Or------------</div>
                 <p>Log In using</p>
                 <div className='flex gap-2'>

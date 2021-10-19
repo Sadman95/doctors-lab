@@ -5,6 +5,7 @@ import DoctorsAll from './components/DoctorsAll/DoctorsAll';
 import Home from './components/Home/Home';
 import Login from './components/Login/Login';
 import NavigationBar from './components/Shared/NavigationBar/NavigationBar';
+import SignUp from './components/SignUp/SignUp';
 
 function App() {
   return (
@@ -22,6 +23,9 @@ function App() {
           </Route>
           <Route path='/login'>
             <Login></Login>
+          </Route>
+          <Route path='/signup'>
+            <SignUp></SignUp>
           </Route>
         </Switch>
       </Router>
