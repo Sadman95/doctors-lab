@@ -4,6 +4,7 @@ import {
   getAuth,
   signInWithPopup,
   GoogleAuthProvider,
+  FacebookAuthProvider ,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
@@ -41,6 +42,12 @@ const useFirebase = () => {
     return signInWithPopup(auth, googleProvider);
   };
 
+  //facebook sign in:
+  const handleFacebookSignIn = () =>{
+    const facebookProvider = new FacebookAuthProvider();
+    return signInWithPopup(auth, facebookProvider);
+  }
+
   // log out:
   const handleLogOut = () => {
     return signOut(auth);
@@ -64,6 +71,7 @@ const useFirebase = () => {
     setUser,
     setError,
     handleGoogleSignIn,
+    handleFacebookSignIn,
     handleSignIn,
     handleSignUp,
     handleLogOut,

@@ -4,7 +4,7 @@ import useAuth from "../../hooks/useAuth";
 
 const SignUp = () => {
 
-  const { setUser, error, setError, handleSignUp, updateProfile } = useAuth();
+  const { setUser, error, setError, handleSignUp } = useAuth();
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
