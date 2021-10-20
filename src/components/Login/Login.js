@@ -61,11 +61,13 @@ const Login = () => {
     setPassword(password);
   };
 
+  //submit handler:
   const handleSubmit = (e) => {
     e.preventDefault();
     handleSignIn(email, password)
       .then((result) => {
-        console.log(result);
+        setUser(result.user);
+        setError('');
       })
       .catch(() => {
         setError("Email or Password may not match");
