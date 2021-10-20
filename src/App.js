@@ -7,6 +7,7 @@ import Login from './components/Login/Login';
 import NotFound from './components/NotFound/NotFound';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import NavigationBar from './components/Shared/NavigationBar/NavigationBar';
+import SignUp from './components/SignUp/SignUp';
 import AuthProvider from './context/AuthProvider/AuthProvider';
 
 function App() {
@@ -26,6 +27,9 @@ function App() {
           </PrivateRoute>
           <Route path='/login'>
             <Login></Login>
+          </Route>
+          <Route path='/signup'>
+            <SignUp></SignUp>
           </Route>
           <Route path='*'>
             <NotFound></NotFound>

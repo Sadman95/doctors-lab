@@ -7,6 +7,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
+  updateProfile,
   onAuthStateChanged,
 } from "firebase/auth";
 
@@ -19,14 +20,21 @@ const useFirebase = () => {
   const auth = getAuth();
 
   // create new user:
-  const handleSignUp = (email, password) => {
+  const handleSignUp = (name, email, password) => {
+    updateProfile(auth?.currentUser, {
+      displayName: name,
+    }).then((result) => {});
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
   // sign in with email & password:
   const handleSignIn = (email, password) => {
+    updateProfile(auth.currentUser, {
+      email: email,
+    }).then((result) => {});
     return signInWithEmailAndPassword(auth, email, password);
   };
+
 
 
   // google sign in:
