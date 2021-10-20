@@ -12,6 +12,7 @@ const Login = () => {
     handleSignUp,
   } = useAuth();
 
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isSignUp, setIsSignUp] = useState(false);
@@ -25,6 +26,7 @@ const Login = () => {
     handleGoogleSignIn()
       .then((result) => {
         setUser(result.user);
+        setError("");
       })
       .catch((error) => {
         setError(error.message);
@@ -34,14 +36,27 @@ const Login = () => {
       });
   };
 
-  // get name:
+  //   get name:
+  const getName = (e) => {
+    setName(e.target.value);
+  };
+
+  // get email:
   const getEmail = (e) => {
+    const email = e.target.value;
+    if (!/\S+@\S+\.\S+/.test(email)) {
+      setError("Invalid email address");
+      return;
+    }
     setEmail(e.target.value);
+    setError("");
   };
 
   // get password:
   const getPassword = (e) => {
-    setPassword(e.target.value);
+    const password = e.target.value;
+    setPassword(password);
+    setError("");
   };
 
   // toggle:
@@ -49,25 +64,51 @@ const Login = () => {
     setIsSignUp(e.target.checked);
   };
 
-  // handle sign in:
-  const handleSubmit = (e,email, password) => {
-      e.preventDefault()
+  //
+  const userSignIn = (email, password) => {
+    handleSignIn(email, password)
+      .then((result) => {
+        setUser(result.user);
+        setError("");
+      })
+      .catch(() => {
+        setError("Email or Password do not match");
+      });
+    setEmail("");
+    setPassword("");
+  };
+
+  //
+  const userSignUp = (email, password) => {
+    handleSignUp(email, password)
+      .then((result) => {
+        setUser(result.user);
+        setError("");
+      })
+      .catch(() => {
+        setError("Already taken...try to log in");
+      });
+  };
+
+  // handle submit:
+  const handleSubmit = (e) => {
+    e.target.preventDefault();
+    if (password.length < 6) {
+      setError("Password must be more than 6 characters");
+      return;
+    }
+    if (!/(?=.*?[A-Z])/.test(password)) {
+      setError("Password must have one uppercase letter");
+      return;
+    }
+    if (!/(?=.*?[0-9])/.test(password)) {
+      setError("Password must have one digit");
+      return;
+    }
     if (isSignUp) {
-      handleSignUp(email, password)
-        .then((result) => {
-          setUser(result.user);
-        })
-        .catch((error) => {
-          setError(error.message);
-        });
+      userSignUp(email, password);
     } else {
-      handleSignIn(email, password)
-        .then((result) => {
-          setUser(result.user);
-        })
-        .catch((error) => {
-          setError(error.message);
-        });
+      userSignIn(email, password);
     }
   };
 
@@ -77,10 +118,11 @@ const Login = () => {
         <h1 className="text-4xl text-yellow-400 font-semibold mb-4">
           {isSignUp ? "Sign Up" : "Log In"}
         </h1>
-        <form action="" onSubmit={() => handleSubmit(email, password)}></form>
+        <form action="" onSubmit={handleSubmit}>
         {isSignUp && (
           <>
             <input
+              onBlur={getName}
               className="w-3/4 border-2 border-gray-400 rounded-md p-2 mb-4"
               type="text"
               name=""
@@ -114,7 +156,7 @@ const Login = () => {
         <input
           type="submit"
           className="mb-4 text-white bg-green-500 hover:bg-green-700 px-4 py-1 rounded"
-          value={isSignUp ? "Sign Up" : "Log In"}
+          value={isSignUp ? "Sign Up" : "Log In"}              
         />
         <br />
         <input
@@ -129,6 +171,7 @@ const Login = () => {
         </label>
         <br />
         <p className="text-red-700 text-2xl">{error}</p>
+        </form>
         <div className="text-gray-500">-----------Or------------</div>
         <p>Log In using</p>
         <div className="flex gap-2">

@@ -2,7 +2,7 @@ import { Box } from "@mui/system";
 import Chip from "@mui/material/Chip";
 import Avatar from "@mui/material/Avatar";
 import React from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import logo from "../../../../src/logo.png";
 import MenuIcon from "@mui/icons-material/Menu";
