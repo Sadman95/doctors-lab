@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
+import Departments from './components/Departments/Departments';
 import DoctorDetail from './components/DoctorDetail/DoctorDetail';
 import DoctorsAll from './components/DoctorsAll/DoctorsAll';
 import Home from './components/Home/Home';
@@ -19,11 +20,17 @@ function App() {
           <Route exact path='/'>
             <Home></Home>
           </Route>
+          <Route exact path='/home'>
+            <Home></Home>
+          </Route>
           <PrivateRoute path='/alldoctors'>
             <DoctorsAll></DoctorsAll>
           </PrivateRoute>
           <PrivateRoute path='/doctordetail/:doctorId'>
             <DoctorDetail></DoctorDetail>
+          </PrivateRoute>
+          <PrivateRoute path='/departments'>
+            <Departments></Departments>
           </PrivateRoute>
           <Route path='/login'>
             <Login></Login>

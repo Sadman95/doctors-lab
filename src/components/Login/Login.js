@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useLocation, useHistory, Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import useAuth from "../../hooks/useAuth";
+import GoogleIcon from '@mui/icons-material/Google';
+import FacebookIcon from '@mui/icons-material/Facebook';
 
 const Login = () => {
   const {
@@ -151,14 +153,14 @@ const Login = () => {
             disabled={user.email ? true : false}
             onClick={signInWithGoogle}
             className={!user.email ? "mb-4 cursor-pointer text-white bg-pink-500 hover:bg-pink-700 px-4 py-1 rounded": "mb-4 text-white bg-pink-500 px-4 py-1 rounded cursor-not-allowed"}
-          >
+          ><GoogleIcon className='mr-1'/>
             Google
           </button>
           <button
             disabled={user.email ? true : false}
             onClick={signInWithFacebook}
             className={!user.email ? "mb-4 cursor-pointer text-white bg-indigo-500 hover:bg-indigo-700 px-4 py-1 rounded":"mb-4 text-white bg-indigo-500 px-4 py-1 rounded cursor-not-allowed"}
-          >
+          ><FacebookIcon className='mr-1'/>
             Facebook
           </button>
         </div>

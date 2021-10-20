@@ -1,0 +1,9 @@
+#dept{
+    overflow: hidden;
+}
+#dept img{
+    transition: transform 0.3s ease-in-out;
+}
+#dept:hover img{
+    transform: scale(1.1);
+}

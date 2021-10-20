@@ -1,0 +1,26 @@
+[
+    {
+        "dept_img": "https://i.ibb.co/9gW93bb/cardiology.jpg",
+        "title": "Crdiology Dept."
+    },
+    {
+        "dept_img": "https://i.ibb.co/n8St3vX/neurology.jpg",
+        "title": "Neurology Dept."
+    },
+    {
+        "dept_img": "https://i.ibb.co/Kwb6x4T/gynecology.jpg",
+        "title": "Gynecology Dept."
+    },
+    {
+        "dept_img": "https://i.ibb.co/9rGbK8M/dental.jpg",
+        "title": "Dental Unit"
+    },
+    {
+        "dept_img": "https://i.ibb.co/YDQzhYF/dermetology.jpg",
+        "title": "Dermetology Dept."
+    },
+    {
+        "dept_img": "https://i.ibb.co/7S0TFNx/orthopedic.jpg",
+        "title": "Orthopedics Dept."
+    }
+]

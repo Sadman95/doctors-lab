@@ -30,7 +30,7 @@ const NavigationBar = () => {
         </h2>
       </Box>
       <Box className="ml-auto">
-        <ul className="sm: hidden md:hidden lg:flex flex-wrap gap-3 items-center">
+        <ul className="sm: hidden md:hidden lg:flex flex-wrap gap-4 items-center">
           <Link className="font-semibold hover:text-purple-900" to="/">
             Home
           </Link>
@@ -55,6 +55,9 @@ const NavigationBar = () => {
           >
             Our Specialists
           </HashLink>
+          <Link className="font-semibold hover:text-purple-900" to="/departments">
+            Departments
+          </Link>
           <HashLink
             smooth
             to="/#subscribe"
@@ -119,6 +122,9 @@ const NavigationBar = () => {
               >
                 Our Specialists
               </HashLink>
+              <Link className="font-semibold hover:text-purple-900" to="/departments">
+            Departments
+          </Link>
               <HashLink
                 smooth
                 to="/#subscribe"
@@ -129,8 +135,8 @@ const NavigationBar = () => {
               <>
             {
               user.email && <Chip
-              avatar={<Avatar alt="Natacha" src={user.photoURL} />}
-              label={user.displayName}
+              avatar={<Avatar alt="userPhoto" src={user.photoURL} />}
+              label={user.displayName || user.email}
               variant="outlined"
             />
             }
@@ -140,14 +146,16 @@ const NavigationBar = () => {
                   Log In
                 </button>
               </Link>:
-              <Link>
+              <Link to='/login'>
                 <button onClick={signOut} className="py-2 px-4 font-semibold rounded-lg shadow-md text-white bg-red-500 hover:bg-red-700">
                   Log Out
                 </button>
               </Link>}
-              <Link to='/signup'>
+              {
+            !user.email && <Link to='/signup'>
             <button className="bg-yellow-500 hover:bg-yellow-700 py-2 px-4 fon-semibold rounded-lg shadow-md text-white">Sign Up</button>
           </Link>
+          }
             </ul>
             </div>
         </div>
