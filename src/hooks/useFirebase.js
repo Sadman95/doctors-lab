@@ -7,8 +7,8 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
-  updateProfile,
   onAuthStateChanged,
+  sendPasswordResetEmail
 } from "firebase/auth";
 
 initializeAuthentication();
@@ -19,23 +19,21 @@ const useFirebase = () => {
 
   const auth = getAuth();
 
+
   // create new user:
-  const handleSignUp = (name, email, password) => {
-    updateProfile(auth?.currentUser, {
-      displayName: name,
-    }).then((result) => {});
+  const handleSignUp = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
   // sign in with email & password:
   const handleSignIn = (email, password) => {
-    updateProfile(auth.currentUser, {
-      email: email,
-    }).then((result) => {});
     return signInWithEmailAndPassword(auth, email, password);
   };
 
-
+  //reset password:
+  const resetPassword = (email) =>{
+    return sendPasswordResetEmail(auth, email)
+  }
 
   // google sign in:
   const handleGoogleSignIn = () => {
@@ -50,14 +48,15 @@ const useFirebase = () => {
 
   // observer:
   useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         setUser(user);
       } else {
         setUser({});
       }
     });
-  }, []);
+    return () => unsubscribe;
+  }, [auth]);
 
   return {
     user,
@@ -68,6 +67,7 @@ const useFirebase = () => {
     handleSignIn,
     handleSignUp,
     handleLogOut,
+    resetPassword,
   };
 };
 

@@ -81,9 +81,11 @@ const NavigationBar = () => {
                   Log Out
                 </button>
               </Link>}
-          <Link to='/signup'>
+          {
+            !user.email && <Link to='/signup'>
             <button className="bg-yellow-500 hover:bg-yellow-700 py-2 px-4 fon-semibold rounded-lg shadow-md text-white">Sign Up</button>
           </Link>
+          }
           
         </ul>
         <div className="md: block lg:hidden">

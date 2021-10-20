@@ -1,14 +1,17 @@
 import React, { useState } from "react";
 import { useLocation, useHistory, Link } from "react-router-dom";
+import Swal from "sweetalert2";
 import useAuth from "../../hooks/useAuth";
 
 const Login = () => {
   const {
+    user,
     handleGoogleSignIn,
     error,
     setUser,
     setError,
     handleSignIn,
+    resetPassword,
   } = useAuth();
 
   const [email, setEmail] = useState("");
@@ -52,8 +55,23 @@ const Login = () => {
     .catch(() =>{
       setError('Email or Password may not match');
     })
+    .finally(() => {
+      history.push(render_url);
+    });
     setError('');
     console.log(email, password)
+  }
+
+  // reset password:
+  const passwordReset = () =>{
+    resetPassword(email)
+    .then(()=> {
+      Swal.fire('Password reset mail sent');
+      setError('');
+    })
+    .catch(() =>{
+      setError('Put your email first');
+    })
   }
 
   return (
@@ -83,17 +101,22 @@ const Login = () => {
           required
         />
         <br />
+        <p className="text-red-700 text-xl">{error}</p>
+        <br />
         <input
           type="submit"
-          className="mb-4 text-white bg-green-500 hover:bg-green-700 px-4 py-1 rounded"
+          disabled={user.email ? true : false}
+          className={!user.email ? "mb-4 mr-2 text-white bg-green-500 hover:bg-green-700 px-4 py-1 rounded":"mb-4 mr-2 text-white bg-green-500 px-4 py-1 rounded"}
           value='Log In'              
         />
+        {
+          user.email && <button onClick={passwordReset} className='bg-red-600 hover:bg-red-400 rounded py-1 px-4 text-white'>Reset Password</button>
+        }
         <br />
         <p className="text-blue-400 underline">
           Don't have an account? <Link className='text-blue-600' to='/signup'>Sign Up</Link>
         </p>
-        <br />
-        <p className="text-red-700 text-2xl">{error}</p>
+        
         </form>
         <div className="text-gray-500">-----------Or------------</div>
         <p>Log In using</p>

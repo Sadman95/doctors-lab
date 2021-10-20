@@ -4,7 +4,7 @@ import useAuth from "../../hooks/useAuth";
 
 const SignUp = () => {
 
-  const { setUser, error, setError, handleSignUp } = useAuth();
+  const { setUser, error, setError, handleSignUp, updateProfile } = useAuth();
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -36,7 +36,7 @@ const SignUp = () => {
     setPassword(userPassword);
   };
 
-
+//   submit handler:
   const handleSubmit = (e) => {
     e.preventDefault();
     if (password.length < 6) {
@@ -55,10 +55,10 @@ const SignUp = () => {
       setError("Password must contain at least one special character");
       return;
     }
-    setError("");
-    handleSignUp(name, email, password)
+    handleSignUp(email, password)
     .then(result =>{
         setUser(result.user);
+        setError("");
     })
     .catch(err =>{
         setError(err.message);
